@@ -1,10 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
   <head>
+    {% load static %}
     <meta charset="utf-8">
-    <title></title>
+    <title>Belt Exam</title>
+    <link rel = "stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   </head>
   <body>
-    Hello World!
+    <div class = "container">
+      <div id = "registration">
+        <h1>Registration</h1>
+        <form action="/users" method="post">
+          {% csrf_token %}
+          <div>
+            <label>Name:</label>
+            <input type = "text" name="name">
+          </div>
+        <div>
+          <label>Username:<label>
+          <input type = "text" name = "username">
+        </div>
+        <div>
+          <label>Password:</label>
+          <input type = "password" name = "password">
+        </div>
+        *password should be at least 8 characters
+        <div>
+          <label>Confirm Password:</label>
+          <input type = "password" name = "password2">
+        </div>
+        <div>
+          <label>Date Hired:</label>
+          <input type = "date" name = "date_hired">
+        </div>
+          <input type = "submit" value = "Register">
+         </form>
+      </div>
+      <div id = "log_in">
+        <h1>Login</h1>
+        <div>
+          <form action = "/session" method="post">
+            {% csrf_token %}
+            <div>
+              <label>Username</label>
+              <input type = "text" name = "username">
+            </div>
+            <div>
+              <label>Password</label>
+              <input type = "password" name = "password">
+            </div>
+            <input type = "submit" value = "Login">
+          </form>
+        </div>
+      </div>
+    </div> <!--- container --->
   </body>
 </html>

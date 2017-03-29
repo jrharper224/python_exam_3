@@ -1,0 +1,24 @@
+#registration{
+  display: inline-block;
+  border: 2px solid black;
+}
+
+  #registration div {
+    margin-bottom: 30px;
+  }
+
+#log_in{
+  display: inline-block;
+  border: 2px solid black;
+  vertical-align: top;
+  margin-left: 35px;
+}
+
+  #log_in div {
+    margin-bottom: 30px;
+  }
+
+a {
+
+  margin-top: 35px;
+}
